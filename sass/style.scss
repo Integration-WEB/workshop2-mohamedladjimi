@@ -1,0 +1,42 @@
+$languages: "HTML5", "CSS3", "JAVA", "React";
+
+.text,
+textarea,
+h1 {
+    color: red;
+    font-size: 20px;
+}
+
+@mixin btn($p1: 3px, $p2: solid, $p3: yellow) {
+    border: $p1 $p2 $p3;
+}
+
+@function backgorund($color) {
+    @if ($color == white) {
+        @return black;
+    } @else {
+        @return white;
+    }
+}
+
+h1 {
+    color: backgorund(white);
+}
+h2 {
+    color: backgorund(blue);
+}
+
+@function premier() {
+    @return nth($languages, 1);
+}
+
+@function dernier() {
+    @return nth($languages, -1);
+}
+
+.text {
+    content: premier();
+}
+.text {
+    content: dernier();
+}
